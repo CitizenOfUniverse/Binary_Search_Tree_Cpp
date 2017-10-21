@@ -15,7 +15,9 @@ public:
 	void insert(int);// Inserts an integer to a tree
 	int get_size();//Returns size of the tree
 	bool is_empty();//Returns true, if tree is empty, and false otherwise
+	void print_right_left_root();
 private:
 	void insert_to_subtree(node* now_node, int data);
 	void delete_subtree(node* top);
+	void print_subtree_right_left_root(node* top);
 };
