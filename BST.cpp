@@ -3,6 +3,9 @@
 */
 #include "BST.h"
 #include "stddef.h"
+#include <iostream>
+
+using std::cout;
 
 // Binary search tree class constructor.
 BST::BST(){
@@ -89,5 +92,33 @@ bool BST::is_empty(){
 	}
 	else{
 		return false;
+	}
+}
+void BST::print_right_left_root(){
+	this->print_subtree_right_left_root(this->top);
+}
+void BST::print_subtree_right_left_root(node* now_top){
+	if (now_top->get_right_son() == NULL){
+		if (now_top->get_left_son() == NULL){
+			cout << now_top->getData() << " ";
+			return;
+		}
+		else{
+			this->print_subtree_right_left_root(now_top->get_left_son());
+			cout << now_top->getData() << " ";
+			return;
+		}
+	}
+	else{
+		this->print_subtree_right_left_root(now_top->get_right_son());
+		if (now_top->get_left_son() == NULL){
+			cout << now_top->getData() << " ";
+			return;
+		}
+		else{
+			this->print_subtree_right_left_root(now_top->get_left_son());
+			cout << now_top->getData() << " ";
+			return;
+		}
 	}
 }
