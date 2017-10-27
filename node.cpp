@@ -4,7 +4,7 @@
 
 #include "BST.h"
 // Here "stddef.h" is needed to define NULL constant
-#include "stddef.h"
+//#include "stddef.h"
 
 // node class constructor
 node::node(){
@@ -44,4 +44,12 @@ son_create_status node::create_right_son(int data){
 	else{
 		return LEFT_SON_ALREADY_EXISTS;
 	}
+}
+void node::set_left_son(node* new_left_son){
+	this->left = new_left_son;
+	return;
+}
+void node::set_right_son(node* new_right_son){
+	this->right = new_right_son;
+	return;
 }

@@ -22,4 +22,6 @@ public:
 	node(int data);//Class constructor. Initialises all private fields.
 	son_create_status create_left_son(int data);
 	son_create_status create_right_son(int data);
+	void set_left_son(node* new_left_son);
+	void set_right_son(node* new_right_son);
 };
